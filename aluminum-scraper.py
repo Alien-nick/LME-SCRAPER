@@ -40,8 +40,6 @@ headers = {
 }
 res = scraper.get(url, headers=headers)
 
-print(res)
-
 # Load the JSON data
 data = json.loads(res.text)
 
