@@ -1,8 +1,16 @@
 import cfscrape
 import json
+from dotenv import load_dotenv
+import os
 
 # Create a CloudflareScraper instance
-scraper = cfscrape.create_scraper(delay=15)
+scraper = cfscrape.create_scraper(delay=25)
+
+# Load environment variables from .env file
+load_dotenv()
+
+# Get cookie
+cookie = os.getenv('COOKIE')
 
 # Define the URL to crawl
 url = 'https://www.lme.com/api/trading-data/day-delayed?datasourceId=762a3883-b0e1-4c18-b34b-fe97a1f2d3a5'
@@ -13,7 +21,7 @@ headers = {
     'Accept-Encoding': 'gzip, deflate, br',
     'Accept-Language': 'en-GB,en-US;q=0.9,en;q=0.8',
     'Content-Type': 'application/x-www-form-urlencoded',
-    'Cookie': '_cfuvid=8idh8ac1si2fEtdlTK7PinRf6quXr6JDlvUgXB4pWDs-1716202576673-0.0.1.1-604800000; shell#lang=en; ai_user=66tORjIrH5zRy8/ZqehbzV|2024-05-20T11:26:13.418Z; lme#lang=en; ASP.NET_SessionId=fm0gcn34m3tqumkisa5c2ver; OptanonConsent=isGpcEnabled=0&datestamp=Mon+May+20+2024+07%3A30%3A43+GMT-0400+(Guyana+Time)&version=6.19.0&isIABGlobal=false&hosts=&landingPath=NotLandingPage&groups=C0001%3A1%2CC0003%3A0%2CC0002%3A0%2CC0004%3A0&AwaitingReconsent=false; __cf_bm=rQ4D17FQkCefZ4wUro7G5hWnHlyOo_cLTz.O0kGO2OQ-1716223570-1.0.1.1-asKFlMgtm0_fnSop.AbDUeDi3Yqn6HVg_XlQMuV26Uwf0TZXtPRg6lAM6cdT5ol.YQ60pSL4XSrjLzCV3dEI5Q; cf_clearance=y_XQamd3xSVrLobp4wsOm0880pLN5WNcTzPZcvHdJZY-1716223586-1.0.1.1-97QafRVupPfhMQzRJMuqPaSvmTKDsE81AZHz8G4SEymmXbnzIjhS8CWNlCdUjEPIi4pADdKga.a8N2Mx1RHAaA',
+    'Cookie': cookie,
     'Priority': 'u=0, i',
     'Sec-Ch-Ua': '"Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"',
     'Sec-Ch-Ua-Arch': '"x86"',
