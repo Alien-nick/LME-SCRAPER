@@ -1,4 +1,5 @@
 import cfscrape
+import json
 
 # Create a CloudflareScraper instance
 scraper = cfscrape.create_scraper(delay=15)
@@ -33,4 +34,25 @@ headers = {
 }
 res = scraper.get("https://www.lme.com/api/trading-data/day-delayed?datasourceId=762a3883-b0e1-4c18-b34b-fe97a1f2d3a5",headers=headers)
 
-print(res.text);
+# Load the JSON data
+data = json.loads(res.text)
+
+# Initialize variables to hold the values
+cash_values = None
+three_month_values = None
+
+# Iterate through the rows to find the relevant entries
+for row in data['Rows']:
+    if row['RowTitle'] == 'Cash':
+        cash_values = row['Values']
+    elif row['RowTitle'] == '3-month':
+        three_month_values = row['Values']
+
+# Check if values are found and print them
+if cash_values and three_month_values:
+    print("Cash Value 1:", cash_values[0])
+    print("Cash Value 2:", cash_values[1])
+    print("3-Month Value 1:", three_month_values[0])
+    print("3-Month Value 2:", three_month_values[1])
+else:
+    print("Relevant data not found.")
