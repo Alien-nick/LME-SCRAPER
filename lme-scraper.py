@@ -13,9 +13,8 @@ headers = {
     'Accept-Encoding': 'gzip, deflate, br',
     'Accept-Language': 'en-GB,en-US;q=0.9,en;q=0.8',
     'Content-Type': 'application/x-www-form-urlencoded',
-    'Cookie': '__cf_bm=pUuRKxSyV1arjECh36D3KwZ4tbglJbzDvsDL1W.t7Xs-1716202573-1.0.1.1-aWSQ20SyouMfOG9IVfRdMwJKU9eruZlWuK58j3zazTp3q06LQQ7UBglAykqmusSMqaXzwRflXThso4ivBuvUXQ; _cfuvid=8idh8ac1si2fEtdlTK7PinRf6quXr6JDlvUgXB4pWDs-1716202576673-0.0.1.1-604800000; cf_clearance=Nb4CxbcEzUfZQn.rAp8RDPzjaTH5Wgeq_ZHV_1lLbVk-1716203246-1.0.1.1-fr5Fa4WtjEW1.9ohSH7jHrIaznq_YB6Dk0uhSTIRfR_Pzr1._UFkafxtMxFogYxKwZvJcGzUhMd3UYNKDkqlOg; __cf_bm=JH0dCj9Wg3f_6OBFjhwSstxUtZFrleh8fTJ2afsBWLM-1716204054-1.0.1.1-N4V0fzTNABWBpcN3fpA0Uq3j7XCrT8IidJqP20WRUIQwztxywONLPoK1WsGH4x9cIGEDvytOPvCty9OBTvTSrw; _cfuvid=GIXpaNI8IChmmA2AZwAFqVJpm7FkyDygjVKIt9C81z8-1716203765151-0.0.1.1-604800000',
+    'Cookie': '_cfuvid=8idh8ac1si2fEtdlTK7PinRf6quXr6JDlvUgXB4pWDs-1716202576673-0.0.1.1-604800000; shell#lang=en; ai_user=66tORjIrH5zRy8/ZqehbzV|2024-05-20T11:26:13.418Z; lme#lang=en; ASP.NET_SessionId=fm0gcn34m3tqumkisa5c2ver; OptanonConsent=isGpcEnabled=0&datestamp=Mon+May+20+2024+07%3A30%3A43+GMT-0400+(Guyana+Time)&version=6.19.0&isIABGlobal=false&hosts=&landingPath=NotLandingPage&groups=C0001%3A1%2CC0003%3A0%2CC0002%3A0%2CC0004%3A0&AwaitingReconsent=false; __cf_bm=rQ4D17FQkCefZ4wUro7G5hWnHlyOo_cLTz.O0kGO2OQ-1716223570-1.0.1.1-asKFlMgtm0_fnSop.AbDUeDi3Yqn6HVg_XlQMuV26Uwf0TZXtPRg6lAM6cdT5ol.YQ60pSL4XSrjLzCV3dEI5Q; cf_clearance=y_XQamd3xSVrLobp4wsOm0880pLN5WNcTzPZcvHdJZY-1716223586-1.0.1.1-97QafRVupPfhMQzRJMuqPaSvmTKDsE81AZHz8G4SEymmXbnzIjhS8CWNlCdUjEPIi4pADdKga.a8N2Mx1RHAaA',
     'Priority': 'u=0, i',
-    'Referer': 'https://www.lme.com/api/trading-data/day-delayed?datasourceId=762a3883-b0e1-4c18-b34b-fe97a1f2d3a5&__cf_chl_tk=2SHpJJhen6N0u4SG60WhO_jpttjzmXXGpUwZ_4uracY-1716203246-0.0.1.1-1770',
     'Sec-Ch-Ua': '"Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"',
     'Sec-Ch-Ua-Arch': '"x86"',
     'Sec-Ch-Ua-Bitness': '"64"',
@@ -32,6 +31,8 @@ headers = {
     'Upgrade-Insecure-Requests': '1'
 }
 res = scraper.get(url, headers=headers)
+
+print(res)
 
 # Load the JSON data
 data = json.loads(res.text)
