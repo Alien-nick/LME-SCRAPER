@@ -1,0 +1,1 @@
+Install `pip install -U cfscrape` first before running
